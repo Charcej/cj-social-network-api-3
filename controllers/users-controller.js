@@ -4,7 +4,7 @@ const {Users} = require('../models');
 // Setting up controller for users 
 const usersController = {
     
-    // CREATE new user
+    // PUT or POST new user
     createUsers({body}, res) {
         Users.create(body)
         .then(dbUsersData => res.json(dbUsersData))
@@ -84,7 +84,7 @@ const usersController = {
         .catch(err => res.json(err));
     },
 
-    // DELETE friend
+    // DELETE friend by ID
     deleteFriend({ params }, res) {
         Users.findOneAndUpdate({_id: params.id}, {$pull: { friends: params.friendId}}, {new: true})
         .populate({path: 'friends', select: '-__v'})
