@@ -60,11 +60,12 @@ const ThoughtsSchema = new Schema(
         virtuals: true,
         getters: true
     },
+    // prevents virtuals from creating duplicate of _id as 'id'
     id: false
     }
 )
 
-// Reaction total count
+// get total count of reactions on retrieval
 ThoughtsSchema.virtual('reactionCount').get(function() {
     return this.reactions.length;
 });
