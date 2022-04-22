@@ -12,5 +12,5 @@ router.use((req, res) => {
     res.status(404).send('<h1>😝 404 Error!</h1>');
 });
 
-// Export API router
+// Export the module for API router
 module.exports = router;

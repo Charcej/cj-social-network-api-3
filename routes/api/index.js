@@ -11,5 +11,5 @@ router.use('/users', usersRoutes);
 // Add the prefix `/thoughts` to routes as created 
 router.use('/thoughts', thoughtsRoutes);
 
-// Export module router
+// Export the module for router
 module.exports = router;
